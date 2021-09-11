@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Righteous&display=swap" rel="stylesheet">
+        <link rel="icon" href="T2A_LOGO.png">
+        <title>
+            T2S
+        </title>
+
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                text-align: center;
+                background-image: url("bg2.jpg");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+            #heading{
+                font-family: 'Righteous', cursive;
+                font-size: 70px;
+                text-decoration:line-through;
+                text-decoration-thickness: 4px;
+                text-decoration-color:white;
+            }
+            #textInput{
+                width: 400px;
+                height: 200px;
+                font-size: 50px;
+                text-align: center;
+                font-family:'Righteous', cursive;
+                
+            }
+            #button{
+                width: 400px;
+                height: 80px;
+                font-size: 50px;
+                background-color: grey;
+                border-color:transparent ;
+                border-radius: 50px;
+                font-family:'Righteous', cursive;
+                transition: 0.5s;
+            
+            }
+            #button:hover{
+                font-size: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        
+<script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+
+        <h1 id="heading">
+            Text 2 Speech
+        </h1>
+        <input id="textInput" placeholder="TEXT"></input>
+        <br>
+        <br>
+        <br>
+        <input type="button" id="button" onclick="speak()" value="SPEAK">
+        <br>
+        <br>
+        <input type="button" id="button" onclick="pause()" value="PAUSE">
+        <br>
+        <br>
+        <input type="button" id="button" onclick="resume()" value="RESUME">
+        <br>
+        <br>
+        <input type="button" id="button" onclick="stop()" value="STOP">
+        <script>
+            function speak(){
+                var textToSpeak = document.getElementById("textInput").value;
+
+                if(textToSpeak == ""){
+                    alert("There is not text in the box");
+                }else{
+                    responsiveVoice.speak(textToSpeak);
+                }
+            }
+            function pause(){
+                responsiveVoice.pause();
+            }
+            function resume(){
+                
+                responsiveVoice.resume();
+            }
+            function stop(){
+                responsiveVoice.cancel();
+            }
+        </script>
+    </body>
+</html>
